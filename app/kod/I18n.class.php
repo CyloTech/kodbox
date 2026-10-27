@@ -20,7 +20,7 @@ class I18n{
 		if(isset($GLOBALS['config']['settings']['language'])){
 			return $GLOBALS['config']['settings']['language'];
 		}
-		$langDefault = 'zh-CN';//zh-CN en;
+		$langDefault = 'en';//zh-CN en;
 		$lang  = $langDefault;
 		$arr   = $GLOBALS['config']['settingAll']['language'];
 		$langs = array();

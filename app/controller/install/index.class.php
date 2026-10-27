@@ -946,7 +946,7 @@ class installIndex extends Controller {
         $driver = KodIO::defaultDriver();
         if($driver) return $driver['id'];
 
-        $dataPath = './data/files/';
+        $dataPath = '/home/appbox/data/files';
         if(!is_dir($dataPath)) @mk_dir($dataPath);
         $freeSize = @disk_free_space($dataPath);
         $freeSize = $freeSize ? floor($freeSize / 1024 / 1024 / 1024) : 0;

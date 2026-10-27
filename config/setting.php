@@ -222,11 +222,11 @@ $config['defaultPlugins'] = array(
 $config['settingSystemDefault'] = array(
 	'systemPassword'	=> rand_string(20),
 	'systemName'		=> "kodbox",
-	'systemDesc'		=> "——可道云.资源管理器",
+	'systemDesc'		=> "Kodbox File Manager",
 	'systemNameType' 	=> 'text',// image/text
 	'systemLogo' 		=> './static/images/common/logo.png',
 	'systemLogoMenu' 	=> './static/images/common/logo-kod.png',
-	'adminTheme' 		=> 'black',// black/white 
+	'adminTheme' 		=> 'black',// black/white
 	
 	'pathHidden'		=> "Thumb.db,.DS_Store,.gitignore,.git,*.temp,*.tmp",//目录列表隐藏的项
 	'autoLogin'			=> "0",			// 是否自动登录；登录用户为guest
@@ -237,10 +237,10 @@ $config['settingSystemDefault'] = array(
 	'globalCss'			=> "",
 	'globalHtml'		=> "",
 
-	'newUserApp'		=> "高德地图,icloud",
-	'newUserFolder'		=> "我的文档,我的图片,我的音乐",
-	'newGroupFolder'	=> "共享资源,文档,其他",	// 新建分组默认建立文件夹
-	'groupRootName'		=> '企业网盘',				// 企业组织架构根节点
+	'newUserApp'		=> "icloud",
+	'newUserFolder'		=> "",
+	'newGroupFolder'	=> "",	// 新建分组默认建立文件夹
+	'groupRootName'		=> 'Group',				// 企业组织架构根节点
 	
 	'versionType'		=> "A",			// 版本
 	'rootListUser'		=> 0,			// 组织架构根节点展示群组内用户
@@ -316,7 +316,6 @@ $config['settingSystemDefault'] = array(
 		array('name'=>'desktop','type'=>'system','url'=>'desktop','target'=>'_self','use'=>'1'),
 		array('name'=>'explorer','type'=>'system','url'=>'explorer','target'=>'_self','use'=>'1'),
 		array('name'=>'editor','type'=>'','url'=>'editor','target'=>'_self','use'=>'0'),
-		array('name'=>'官网','url'=>'https://kodcloud.com',"icon"=>"ri-home-line-3",'target'=>'inline','use'=>'1')
 	),
 );
 $config['settingSystemDefault']['searchFulltext'] = 0;			// like%% 转为match (fulltext索引字段)
@@ -386,28 +385,28 @@ $config['settings']['sourceMeta'] = array(
 	'user_sourceAlias' => array(
 		"type"		=> "fileSelect",
 		"value"		=> "",
-		"display" 	=> "关联文件(附件)",
+		"display" 	=> "Related files (attachments)",
 		"info"		=> array(
 			"single"	=> false,			// 单选or多选; true/false
 			"type"		=> "all", 			// 文件or文件夹选择; file|folder|all
 			"makeUrl"	=> false,			// 生成永久外链,
 			"valueKey"	=> "path", 			// 取结果中的key
 			"valueShowKey"	=> 'name',		// 显示名称;
-			"title"		=> "关联文件(附件)", // 对话框标题;		
+			"title"		=> "Related files (attachments)", // 对话框标题;
 			"authCheck"	=> "read",			// read,write或空;默认为可写入;
 		),
 	),
 	'user_sourceCover' => array(
 		"type"		=> "fileSelect",
 		"value"		=> "",
-		"display" 	=> "文档封面",
+		"display" 	=> "User Image",
 		"info"		=> array(
 			"single"	=> true,			// 单选or多选; true/false
 			"type"		=> "file", 			// 文件or文件夹选择; file|folder|all
 			"makeUrl"	=> true,			// 生成永久外链,
 			"valueKey"	=> "downloadPath", 	// 取结果中的key
 			"valueShowKey"	=> 'name',		// 显示名称;
-			"title"		=> "文档封面", 		 // 对话框标题;		
+			"title"		=> "User Image", 		 // 对话框标题;
 			"authCheck"	=> "read",			// read,write或空;默认为可写入;
 		),
 	),
@@ -416,13 +415,13 @@ $config['settings']['sourceMeta'] = array(
 	'user_sourceNumber' => array(
 		"type"		=> "input",
 		"value"		=> "",
-		"display" 	=> "宗卷编号",
+		"display" 	=> "User Number",
 	),
 	//扩展;
 	'user_sourceParticipant' => array(
 		"type"		=> "user",
 		"value"		=> "",
-		"display" 	=> "参与者",
+		"display" 	=> "Users",
 		"selectType"=> "mutil",
 	),
 );
@@ -442,27 +441,27 @@ $config['settings']['userDefaultTag'] = array(
  */
 $config['documentType'] = array(
 	"doc" => array(
-		"name"		=> '文档',	//file-type: file-type-doc
+		"name"		=> 'Documents',	//file-type: file-type-doc
 		"ext"		=> "txt,md,pdf,ofd,doc,docx,xls,xlsx,ppt,pptx,xps,pps,ppsx,ods,odt,odp,docm,dot,dotm,xlsb,xlsm,mht,djvu,wps,dpt,csv,et,ett,pages,numbers,key,dotx,vsd,vsdx,mpp",
 	),
 	"image" => array(
-		"name"		=> '图片',
+		"name"		=> 'Images',
 		"ext"		=> "jpg,jpeg,png,gif,bmp,ico,svg,webp,tif,tiff,cdr,svgz,xbm,eps,pjepg,heic,raw,psd,ai",
-	),	
+	), 
 	"music" => array(
-		"name"		=> '音乐',
+		"name"		=> 'Music',
 		"ext"		=> "mp3,wav,wma,m4a,ogg,omf,amr,aa3,flac,aac,cda,aif,aiff,mid,ra,ape",
 	),
 	"movie" => array(
-		"name"		=> '视频',
+		"name"		=> 'Movies',
 		"ext"		=> "mp4,flv,rm,rmvb,avi,mkv,mov,f4v,mpeg,mpg,vob,wmv,ogv,webm,3gp,mts,m2ts,m4v,mpe,3g2,asf,dat,asx,wvx,mpa",
 	),
 	"zip" => array(
-		"name"		=> '压缩包',
+		"name"		=> 'Compressed',
 		"ext"		=> "zip,gz,rar,iso,tar,7z,gz,ar,bz,bz2,xz,arj",
 	),
 	"others" => array(
-		"name"		=> '其他',
+		"name"		=> 'Others',
 		"ext"		=> "",
 	),
 	// "psd" => array("name" => '设计稿',"ext"=> "psd,ai"),
@@ -568,7 +567,7 @@ $config['authAllowAction'] = array(
 	'user.setting.notice','user.setting.userLoginList',
 	'user.setting.taskList','user.setting.taskKillAll','user.setting.taskAction',
 	'user.setting.userChart','user.setting.userLog','user.setting.userDevice',
-	
+ 
 	//临时，搜索分享中使用; 设置用户权限or设置用户部门；
 	'admin.role.get','admin.job.get','admin.auth.get',
 	'admin.member.get','admin.member.getByID','admin.member.search',
@@ -615,7 +614,7 @@ $config['authRoleAction']= array(
 		'explorer.fav'		=> 'add,rename,moveTop,moveBottom,del',
 		'explorer.tag'		=> 'add,edit,remove,moveTop,moveBottom,resetSort,filesAddToTag,filesRemoveFromTag',
 	),
-	
+ 
 	'admin.index.dashboard'	=> array('admin.analysis'=>'option,table,chart,trend'),
 	'admin.index.setting'	=> array(
 		'admin.setting'		=> 'get,set,clearCache,phpInfo',
@@ -637,10 +636,10 @@ $config['authRoleAction']= array(
 	'admin.member.userEdit'	=> array('admin.member'=>'add,edit,remove,status,addGroup,removeGroup,switchGroup'),
 	'admin.member.userAuth'	=> array('admin.member'=>'add,edit,remove,status,addGroup,removeGroup,switchGroup'),
 	'admin.member.groupEdit'=> array('admin.group'=>'add,edit,status,sort,remove,switchGroup'),
-	
+ 
 	'admin.auth.list'		=> array('admin.auth'=>'get'),
 	'admin.auth.edit'		=> array('admin.auth'=>'add,edit,remove,sort'),
-	
+ 
 	//插件管理；轻应用归属到插件；
 	'admin.plugin.list'		=> array('admin.plugin'=>'appList'),
 	'admin.plugin.edit'		=> array(
