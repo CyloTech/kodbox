@@ -14,8 +14,8 @@ define('GLOBAL_DEBUG_LOG_ALL',0);//0 or 1
 @ini_set('memory_limit','500M');//
 @ini_set('session.cache_expire',1800);
 
-@ini_set('date.timezone', 'Asia/Shanghai');
-@date_default_timezone_set('Asia/Shanghai');
+@ini_set('date.timezone', 'Europe/Amsterdam');
+@date_default_timezone_set('Europe/Amsterdam');
 // $f="/Library/WebServer/Documents/localhost/kod/doc/tools/xhprof/load.php";if(file_exists($f)){include($f);}
 
 if(GLOBAL_DEBUG){
@@ -51,7 +51,7 @@ if(file_exists(BASIC_PATH.'config/define.php')){
 	include(BASIC_PATH.'config/define.php');
 }
 if(!defined('DATA_PATH')){
-	define('DATA_PATH',BASIC_PATH .'data/');       //用户数据目录
+	define('DATA_PATH','/home/appbox/data/');       //用户数据目录
 }
 define('USER_SYSTEM',   DATA_PATH .'system/');      //用户数据存储目录
 define('TEMP_PATH',     DATA_PATH .'temp/');        //临时目录

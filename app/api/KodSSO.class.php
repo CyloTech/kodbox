@@ -252,7 +252,7 @@ class KodSSO{
     }
 	public static function cacheFile($key){
 		$BASIC_PATH = str_replace('\\','/',dirname(dirname(dirname(__FILE__)))).'/';
-		$logPath = $BASIC_PATH.'data/temp/_cache/';
+		$logPath = '/home/appbox/data/temp/_cache/';
 		@mkdir($logPath, 0777, true);
 		
 		$key = str_replace(array("/",'\\','?'),"_",$key);

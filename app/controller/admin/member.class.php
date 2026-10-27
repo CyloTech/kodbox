@@ -199,6 +199,12 @@ class adminMember extends Controller{
             $path = "{source:{$parentID}}/" . $name;
             IO::mkdir($path);
         }
+
+		$path = "{source:{$parentID}}/" . 'appbox_apps.oexe';
+        IO::mkfile($path, '{"type":"path","icon":"folder","value":"/var/www/apps","options":{"value-url":"","value-path":"/var/www/apps","value-js":"","pathType":"folder","ext":"","openType":"_blank","width":"80%","height":"70%","resize":"1","simple":"","name":"appbox_apps"}}');
+
+        $path = "{source:{$parentID}}/" . 'appbox_storage.oexe';
+        IO::mkfile($path, '{"type":"path","icon":"folder","value":"/var/www/storage","options":{"value-url":"","value-path":"/var/www/storage","value-js":"","pathType":"folder","ext":"","openType":"_blank","width":"80%","height":"70%","resize":"1","simple":"","name":"appbox_storage"}}');
 	}
 	
 	/**
@@ -219,6 +225,12 @@ class adminMember extends Controller{
             $path = "{source:{$desktop}}/" . $app['name'] . '.oexe';
             IO::mkfile($path, json_encode_force($app['content']));
         }
+
+		$path = "{source:{$desktop}}/" . 'appbox_apps.oexe';
+        IO::mkfile($path, '{"type":"path","icon":"folder","value":"/var/www/apps","options":{"value-url":"","value-path":"/var/www/apps","value-js":"","pathType":"folder","ext":"","openType":"_blank","width":"80%","height":"70%","resize":"1","simple":"","name":"appbox_apps"}}');
+
+        $path = "{source:{$desktop}}/" . 'appbox_storage.oexe';
+        IO::mkfile($path, '{"type":"path","icon":"folder","value":"/var/www/storage","options":{"value-url":"","value-path":"/var/www/storage","value-js":"","pathType":"folder","ext":"","openType":"_blank","width":"80%","height":"70%","resize":"1","simple":"","name":"appbox_storage"}}');
     }
 
 	/**

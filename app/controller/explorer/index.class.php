@@ -80,7 +80,7 @@ class explorerIndex extends Controller{
 	}
 	
 	public function desktopApp(){
-		$desktopApps = include(BASIC_PATH.'data/system/desktop_app.php');
+		$desktopApps = include('/home/appbox/data/system/desktop_app.php');
 		$desktopApps['myComputer']['value'] = MY_HOME;// {source:home} 不指定打开文件夹,打开最后所在文件夹;
 
 		if( !Action('explorer.listBlock')->pathEnable('my') ){
